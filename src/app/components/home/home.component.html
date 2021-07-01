@@ -1,0 +1,16 @@
+<div class="w-full flex justify-center">
+    <input
+        type="text" 
+        placeholder="Enter Pokemon name"
+        class="mt-10 p-2 border-blue-500 border-2"
+        name="pokemon-input"
+        [(ngModel)]="text"
+        (ngModelChange)="onChange(text)"
+    />
+</div>
+
+<div class="mt-10 p-4 flex flex-wrap justify-center">
+    <div *ngFor="let pokemon of filteredPokemon" class="ml-4 text-2xl text-blue-400">
+        <a [routerLink]="['/about/' + urlIdLookup[pokemon.name]]">{{ pokemon.name }}</a>
+    </div>
+</div>
